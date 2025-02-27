@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Danh Da';
+    src: local('Danh Da Bold'), local('DanhDa-Bold'),
+        url('DanhDa-Bold.woff2') format('woff2'),
+        url('DanhDa-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

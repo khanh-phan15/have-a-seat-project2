@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 INPUT 1 OUTPUT TEMPLATE</title>
+    <link rel="stylesheet" href="https://use.typekit.net/nsi1sba.css">
+    <style>
+        @font-face {
+    font-family: 'DanhDa';
+    src: url('fonts/DanhDa-Bold.woff2') format('woff2'),
+         url('fonts/DanhDa-Bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    }
+    body{
+        background-color: rgb(233, 228, 222);
+    }
+    h1{
+        font-family: 'DanhDa', san;
+        font-size: 500pt;
+        letter-spacing: -11pt;
+        align-items: center;
+        text-align: center;
+        line-height: 440pt;
+        margin-top: 80px;
+        color:rgb(0, 16, 155)
+    }
+    p1{
+        font-family: "fira-sans-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal; 
+        font-size: 20pt;
+        text-align: center;
+        margin-left: 50px;
+        margin-top: 100px;
+        color:rgb(0, 16, 155);
+        
+    }
+    p2{
+        font-family: "fira-sans-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal; 
+        font-size: 20pt;
+        text-align: center;
+        margin-left: 200px;
+        margin-top: 100px;
+        color:rgb(0, 16, 155);
+        
+    }
+    p3{
+        font-family: "fira-sans-compressed", sans-serif;
+        font-weight: 400;
+        font-style: normal; 
+        font-size: 20pt;
+        text-align: center;
+        margin-left: 400px;
+        margin-top: 100px;
+        color:rgb(0, 16, 155);
+        
+    }
+    
+
+
+        /* STYLE FOR THE INPUT FIELD */
+        #charInput {
+            margin-left: 380px;
+            margin-top: 94px;
+            border: 2px solid rgb(0, 16, 155); 
+            background-color:rgb(233, 228, 222);
+            border-radius: 4px;
+            height: 23px;
+        }
+
+        /* STYLE FOR THE SUBMIT BUTTON */
+        #submitButton {
+            position:absolute;
+            top:100px;
+            left: 1340px;
+            cursor: pointer;
+            width: 30px;
+        }
+
+        /* STYLE FOR THE IMAGE */
+        #displayedImage {
+            position: absolute;
+            top: 250px;
+            left: 370px;
+            align-items: center;
+            display: none; 
+            display: none; 
+            width: 700px; 
+            height: auto; 
+
+        }
+        
+    </style>
+</head>
+<body>
+    <p1>Enter</p1>
+    <p2>A</p2>
+    <p3>Letter</p3>
+     <!-- INPUT FIELD FOR 1 CHARACTER -->
+     <input type="text" id="charInput" maxlength="1">
+
+     <!-- BUTTON TO DISPLAY IMAGE -->
+     <img src="images/Group 4.png" alt="Show Image" id="submitButton" onclick="displayImage()">
+ 
+     <!-- IMAGE TO DISPLAY -->
+     <img id="displayedImage" src="" alt="Displayed Image">
+ 
+ 
+    <h1>HAVE A SEAT</h1>
+    <!-- Image Display Script Below -->
+    <script>
+        // Array of images
+        // DIRECTIONS: UPDATE THE URLS WITH THE RELATIVE LINKS OF YOUR IMAGES
+        const images = [
+            "images/A.PNG",
+            "images/B.PNG",
+            "images/C.PNG",
+            "images/D.PNG",
+            "images/E.PNG",
+            "images/F.PNG",
+            "images/G.PNG",
+            "images/H.PNG",
+            "images/I.PNG",
+            "images/J.PNG",
+            "images/K.PNG",
+            "images/L.PNG",
+            "images/M.PNG",
+            "images/N.PNG",
+            "images/O.PNG",
+            "images/P.PNG",
+            "images/Q.PNG",
+            "images/R.PNG",
+            "images/S.PNG",
+            "images/T.PNG",
+            "images/U.PNG",
+            "images/V.PNG",
+            "images/W.PNG",
+            "images/X.PNG",
+            "images/Y.PNG",
+            "images/Z.PNG",
+        ];
+
+        function displayImage() {
+            const input = document.getElementById("charInput").value.toUpperCase();
+            const imgElement = document.getElementById("displayedImage");
+            
+            // Assign an image based on character (A-Z)
+            const index = input.charCodeAt(0) - 65; // 'A' is 65 in ASCII
+            if (index >= 0 && index < images.length) {
+                imgElement.src = images[index];
+                imgElement.style.display = "block";
+            } else {
+                /* 
+                alert("Please enter a letter between A and Z.");
+                imgElement.style.display = "none";
+                */
+
+                // IF INVALID INPUT IS ENTERED, DISPLAY ALTERNATE IMAGE
+                imgElement.src = "images/broken-chair.gif"
+                imgElement.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
